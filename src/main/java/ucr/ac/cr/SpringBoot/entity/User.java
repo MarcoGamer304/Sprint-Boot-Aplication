@@ -36,7 +36,7 @@ public class User {
     @Column
     private String username;
     @Column
-    private String password;
+    private String pass;
     @Transient
     private String confirmPassword;
 
@@ -87,11 +87,11 @@ public class User {
     }
 
     public String getPassword() {
-        return password;
+        return pass;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.pass = password;
     }
 
     public String getConfirmPassword() {
@@ -118,7 +118,7 @@ public class User {
         hash = 29 * hash + Objects.hashCode(this.lastName);
         hash = 29 * hash + Objects.hashCode(this.email);
         hash = 29 * hash + Objects.hashCode(this.username);
-        hash = 29 * hash + Objects.hashCode(this.password);
+        hash = 29 * hash + Objects.hashCode(this.pass);
         hash = 29 * hash + Objects.hashCode(this.confirmPassword);
         hash = 29 * hash + Objects.hashCode(this.roles);
         return hash;
@@ -148,7 +148,7 @@ public class User {
         if (!Objects.equals(this.username, other.username)) {
             return false;
         }
-        if (!Objects.equals(this.password, other.password)) {
+        if (!Objects.equals(this.pass, other.pass)) {
             return false;
         }
         if (!Objects.equals(this.confirmPassword, other.confirmPassword)) {
@@ -162,7 +162,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "Role{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword + ", roles=" + roles + '}';
+        return "Role{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", username=" + username + ", password=" + pass + ", confirmPassword=" + confirmPassword + ", roles=" + roles + '}';
     }
            
 }
